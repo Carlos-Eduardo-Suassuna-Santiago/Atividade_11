@@ -5,44 +5,44 @@ from .models import *
 from .forms import *
 
 
-class StudentView(TemplateView):
-    template_name = "student.html"
+class AlunoView(TemplateView):
+    template_name = "aluno.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["students"] = Student.objects.all()
+        context["alunos"] = Aluno.objects.all()
         return context
     
 
-class EditStudentView(UpdateView):
-    model = Student
-    form_class = StudentForm  
-    template_name = "edit_students.html"
+class EditAlunoView(UpdateView):
+    model = Aluno
+    form_class = AlunoForm  
+    template_name = "edit_aluno.html"
     success_url = '/alunos/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["student"] = self.get_object() 
+        context["aluno"] = self.get_object() 
         return context
 
-class CreateStudentView(CreateView):
-    model = Student
-    form_class = StudentForm 
-    template_name = "create_student.html"  
+class CreateAlunoView(CreateView):
+    model = Aluno
+    form_class = AlunoForm 
+    template_name = "create_aluno.html"  
     success_url = '/alunos/'  
 
     def form_valid(self, form):
         return super().form_valid(form)
 
-class DeleteStudentView(DeleteView):
-    model = Student
-    template_name = "delete_student.html" 
-    success_url = reverse_lazy('student') 
+class DeleteAlunoView(DeleteView):
+    model = Aluno
+    template_name = "delete_aluno.html" 
+    success_url = reverse_lazy('aluno') 
 
     def get_object(self, queryset=None):
-        return Student.objects.get(pk=self.kwargs['pk'])
+        return Aluno.objects.get(pk=self.kwargs['pk'])
 
-class StudentDetailView(DetailView):
-    model = Student
-    template_name = "detail_student.html" 
-    context_object_name = "student" 
+class AlunoDetailView(DetailView):
+    model = Aluno
+    template_name = "detail_aluno.html" 
+    context_object_name = "aluno" 

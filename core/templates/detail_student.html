@@ -7,11 +7,11 @@
 </head>
 <body>
     <h1>Detalhes do Aluno</h1>
-    <p><strong>Nome:</strong> {{ student.name }}</p>
-    <p><strong>Email:</strong> {{ student.email }}</p>
-    <p><strong>Endereço:</strong> {{ student.address }}</p>
-    <p><strong>Data de Nascimento:</strong> {{ student.date_of_birth }}</p>
+    <p><strong>Nome:</strong> {{ aluno.name }}</p>
+    <p><strong>Email:</strong> {{ aluno.email }}</p>
+    <p><strong>Endereço:</strong> {{ aluno.address }}</p>
+    <p><strong>Data de Nascimento:</strong> {{ aluno.date_of_birth }}</p>
     <!-- Adicione mais informações conforme necessário -->
-    <a href="{% url 'student' %}">Voltar para a lista de alunos</a>
+    <a href="{% url 'aluno' %}">Voltar para a lista de alunos</a>
 </body>
 </html>

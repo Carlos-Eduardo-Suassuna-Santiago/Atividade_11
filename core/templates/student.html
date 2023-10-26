@@ -25,7 +25,7 @@
     </style>
 </head>
 <body>
-    <h1>Lista de students</h1>
+    <h1>Lista de alunos</h1>
     <a href="{% url 'criar_aluno' %}">Criar aluno</a>
     <table>
         <thead>
@@ -37,14 +37,14 @@
             </tr>
         </thead>
         <tbody>
-            {% for student in students %}
+            {% for aluno in alunos %}
             <tr>
-                <td><a href="{% url 'detalhes_aluno' student.pk %}">{{ student.name }}</a></td>
-                <td>{{ student.email }}</td>
-                <td>{{ student.address }}</td>
+                <td><a href="{% url 'detalhes_aluno' aluno.pk %}">{{ aluno.name }}</a></td>
+                <td>{{ aluno.email }}</td>
+                <td>{{ aluno.address }}</td>
                 <td>
-                    <a href="{% url 'edit_student' student.pk %}">Editar</a>
-                    <a href="{% url 'excluir_aluno' student.pk %}">Excluir</a>
+                    <a href="{% url 'edit_aluno' aluno.pk %}">Editar</a>
+                    <a href="{% url 'excluir_aluno' aluno.pk %}">Excluir</a>
                 </td>
             </tr>
             {% endfor %}
