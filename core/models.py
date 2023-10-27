@@ -9,6 +9,9 @@ class Cidade(models.Model):
 class Cursos(models.Model):
     name = models.CharField("Nome", max_length=100)
 
+    class Meta:
+        
+        verbose_name_plural = 'Cursos'
     def __str__(self):
         return self.name
     
